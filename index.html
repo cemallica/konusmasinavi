@@ -13,8 +13,6 @@
       --text: #1c1c1e;
       --text-secondary: #6c6c72;
       --border: #e5e5ea;
-      --hero-from: #0077FF;
-      --hero-to: #1449D1;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -27,11 +25,7 @@
       }
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
@@ -42,7 +36,7 @@
 
     /* HERO */
     .hero {
-      background: linear-gradient(145deg, var(--hero-from), var(--hero-to));
+      background: linear-gradient(145deg, #0077FF, #1449D1);
       padding: 64px 24px 80px;
       text-align: center;
       color: #fff;
@@ -85,7 +79,6 @@
       padding: 5px 14px;
       font-size: 13px;
       font-weight: 500;
-      backdrop-filter: blur(4px);
     }
 
     /* CONTAINER */
@@ -95,7 +88,6 @@
       padding: 40px 20px 60px;
     }
 
-    /* SECTION TITLE */
     .section-label {
       font-size: 12px;
       font-weight: 600;
@@ -156,15 +148,12 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .faq-item:last-child {
-      border-bottom: none;
-    }
+    .faq-item:last-child { border-bottom: none; }
 
     .faq-item h3 {
       font-size: 15px;
       font-weight: 600;
       margin-bottom: 5px;
-      color: var(--text);
     }
 
     .faq-item p {
@@ -181,16 +170,12 @@
       gap: 14px;
       text-decoration: none;
       color: var(--text);
+      cursor: pointer;
       transition: background 0.15s;
     }
 
-    .contact-row:last-child {
-      border-bottom: none;
-    }
-
-    .contact-row:hover {
-      background: var(--bg);
-    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-row:hover { background: var(--bg); }
 
     .contact-icon {
       width: 36px;
@@ -206,21 +191,9 @@
     .contact-icon.blue  { background: #0077FF20; }
     .contact-icon.green { background: #34c75920; }
 
-    .contact-row-text h3 {
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    .contact-row-text p {
-      font-size: 13px;
-      color: var(--text-secondary);
-    }
-
-    .contact-row .arrow {
-      margin-left: auto;
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
+    .contact-row-text h3 { font-size: 15px; font-weight: 500; }
+    .contact-row-text p  { font-size: 13px; color: var(--text-secondary); }
+    .contact-row .arrow  { margin-left: auto; color: var(--text-secondary); font-size: 14px; }
 
     /* PRIVACY */
     .privacy-block {
@@ -230,9 +203,7 @@
       line-height: 1.7;
     }
 
-    .privacy-block strong {
-      color: var(--text);
-    }
+    .privacy-block strong { color: var(--text); }
 
     /* FOOTER */
     footer {
@@ -244,13 +215,8 @@
     }
 
     @media (max-width: 500px) {
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 22px;
-      }
+      .features-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 22px; }
     }
   </style>
 </head>
@@ -270,7 +236,7 @@
 
   <div class="container">
 
-    <!-- ÖZELLIKLER -->
+    <!-- ÖZELLİKLER -->
     <div class="section-label">Özellikler</div>
     <div class="card">
       <div class="features-grid">
@@ -319,7 +285,7 @@
           <div class="feature-icon">🗂️</div>
           <div>
             <h3>Devamsızlık Takibi</h3>
-            <p>Girmeyen ve sürekli devamsız öğrencileri belirleyin</p>
+            <p>Sınava girmeyen ve sürekli devamsız öğrencileri belirleyin</p>
           </div>
         </div>
 
@@ -367,13 +333,13 @@
       </div>
 
       <div class="faq-item">
-        <h3>Verilerimi yedekleyebilir miyim?</h3>
-        <p>Evet. Ayarlar bölümünden tüm verilerinizi şifreli ZIP formatında yedekleyip geri yükleyebilirsiniz.</p>
+        <h3>G statüsü ne anlama geliyor?</h3>
+        <p>Sınava girmeyen veya sürekli devamsız olan öğrenciler için kullanılır. Bu öğrencilerin puanı yerine "G" (Girmedi) ibaresi görüntülenir.</p>
       </div>
 
       <div class="faq-item">
-        <h3>G statüsü öğrenciler için destek var mı?</h3>
-        <p>Evet. Özel eğitim gerektiren öğrenciler ayrıca takip edilebilir ve raporlanabilir.</p>
+        <h3>Verilerimi yedekleyebilir miyim?</h3>
+        <p>Evet. Ayarlar → Yedek Al bölümünden tüm verilerinizi AES-GCM ile şifrelenmiş JSON formatında yedekleyip geri yükleyebilirsiniz.</p>
       </div>
 
     </div>
@@ -382,14 +348,14 @@
     <div class="section-label">İletişim</div>
     <div class="card">
 
-      <a class="contact-row" href="mailto:dalgalicemal@gmail.com">
+      <div class="contact-row" onclick="revealEmail(this)">
         <div class="contact-icon blue">✉️</div>
         <div class="contact-row-text">
           <h3>E-posta Gönder</h3>
-          <p>dalgalicemal@gmail.com</p>
+          <p id="email-hint">Görmek için tıklayın</p>
         </div>
         <span class="arrow">›</span>
-      </a>
+      </div>
 
       <div class="contact-row">
         <div class="contact-icon green">📱</div>
@@ -408,10 +374,12 @@
         <p>
           Tüm öğrenci bilgileri, sınıf listeleri ve değerlendirme sonuçları
           <strong>yalnızca cihazınızda saklanır</strong>. Hiçbir veri sunucularımıza
-          gönderilmez. Geri bildirim formu dışında üçüncü taraflarla veri paylaşımı yapılmaz.
+          gönderilmez. Yedekler <strong>AES-GCM 256-bit</strong> ile şifrelenmiş
+          JSON formatında üretilir ve yalnızca cihazınızdaki anahtar ile açılabilir.
+          Geri bildirim formu dışında üçüncü taraflarla veri paylaşımı yapılmaz.
         </p>
         <br />
-        <p>Son güncelleme: Şubat 2026 &nbsp;·&nbsp; İletişim: dalgalicemal@gmail.com</p>
+        <p>Son güncelleme: Şubat 2026</p>
       </div>
     </div>
 
@@ -420,6 +388,16 @@
   <footer>
     © 2026 Cemal Dalgalı · Konuşma Sınavı v1.0
   </footer>
+
+  <script>
+    function revealEmail(row) {
+      const parts = ['dalgali', 'cemal', '@', 'gmail', '.', 'com'];
+      const email = parts.join('');
+      const hint = document.getElementById('email-hint');
+      hint.textContent = email;
+      row.onclick = function() { window.location.href = 'mailto:' + email; };
+    }
+  </script>
 
 </body>
 </html>
