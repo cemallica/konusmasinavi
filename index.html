@@ -107,6 +107,89 @@
       border: 1px solid var(--border);
     }
 
+    /* SUBJECT CARDS */
+    .subject-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .subject-item {
+      background: var(--card);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .subject-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin: 0 auto 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .subject-dot.red    { background: #ff3b3020; }
+    .subject-dot.purple { background: #af52de20; }
+    .subject-dot.blue   { background: #0077ff20; }
+
+    .subject-item h3 {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: var(--text);
+    }
+
+    .subject-item p {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.3;
+    }
+
+    /* FLOW STEPS */
+    .flow-steps {
+      padding: 4px 0;
+    }
+
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .flow-step:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .flow-step h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .flow-step p {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
     /* FEATURES GRID */
     .features-grid {
       display: grid;
@@ -140,6 +223,74 @@
       font-size: 12px;
       color: var(--text-secondary);
       line-height: 1.4;
+    }
+
+    /* LIST ITEMS */
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 13px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .list-item:last-child { border-bottom: none; }
+
+    .list-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .list-item h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .list-item p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* SETTINGS GROUPS */
+    .settings-group {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .settings-group:last-child { border-bottom: none; }
+
+    .settings-group-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .settings-group ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .settings-group ul li {
+      font-size: 13px;
+      color: var(--text);
+      padding-left: 10px;
+      position: relative;
+    }
+
+    .settings-group ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
     }
 
     /* FAQ */
@@ -216,6 +367,7 @@
 
     @media (max-width: 500px) {
       .features-grid { grid-template-columns: 1fr; }
+      .subject-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 22px; }
     }
   </style>
@@ -236,6 +388,70 @@
 
   <div class="container">
 
+    <!-- DESTEKLENEN DERSLER -->
+    <div class="section-label">Desteklenen Dersler</div>
+    <div class="card">
+      <div class="subject-grid">
+        <div class="subject-item">
+          <div class="subject-dot red">📖</div>
+          <h3>Türkçe</h3>
+          <p>5–8. sınıf<br/>Ortaokul</p>
+        </div>
+        <div class="subject-item">
+          <div class="subject-dot purple">📚</div>
+          <h3>Türk Dili ve Edebiyatı</h3>
+          <p>9–12. sınıf<br/>Lise</p>
+        </div>
+        <div class="subject-item">
+          <div class="subject-dot blue">🌍</div>
+          <h3>İngilizce</h3>
+          <p>5–12. sınıf<br/>Seçmeli dahil</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- KULLANIM AKIŞI -->
+    <div class="section-label">Kullanım Akışı</div>
+    <div class="card">
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Ders Seçin</h3>
+            <p>Türkçe, Türk Dili ve Edebiyatı veya İngilizce dersini seçin. İngilizce için Seçmeli İngilizce seçeneği de mevcuttur; puanı her iki derse yansıtabilirsiniz.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Dönem ve Sınav Seçin</h3>
+            <p>1. veya 2. Dönem ile 1. veya 2. Sınavı belirleyin. Eğitim-öğretim yılı otomatik gelir, değiştirebilirsiniz.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Ölçek Seçin</h3>
+            <p>Hazırlıklı Konuşma, Sunum/Sunu Yapma veya Performans Görevi ölçeklerinden birini seçin. Dilerseniz 30 ölçüt arasından 10 tanesini seçerek Özel Ölçek oluşturun.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">4</div>
+          <div>
+            <h3>Öğrenci Listesini Hazırlayın</h3>
+            <p>e-Okul'daki not girişi ekranından kopyalayıp yapıştırarak listeyi aktarın veya öğrencileri tek tek ekleyin. Mükerrer kayıtlar otomatik tespit edilir.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">5</div>
+          <div>
+            <h3>Değerlendirin ve Raporlayın</h3>
+            <p>Her öğrenciyi ölçüt bazında puanlayın. Tamamlandığında Excel, PDF, PNG veya ZIP olarak çıktı alın.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ÖZELLİKLER -->
     <div class="section-label">Özellikler</div>
     <div class="card">
@@ -245,7 +461,7 @@
           <div class="feature-icon">📋</div>
           <div>
             <h3>MEB Uyumlu Ölçekler</h3>
-            <p>Hazırlıklı Konuşma, Sunum ve Performans Görevi ölçekleri</p>
+            <p>Hazırlıklı Konuşma, Sunum/Sunu Yapma, Performans Görevi ve özel ölçek</p>
           </div>
         </div>
 
@@ -253,7 +469,23 @@
           <div class="feature-icon">🏫</div>
           <div>
             <h3>e-Okul Entegrasyonu</h3>
-            <p>Öğrenci listelerini e-Okul'dan kopyalayıp aktarın</p>
+            <p>Not girişi ekranından kopyalayıp yapıştırarak anında öğrenci listesi oluşturun</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🎲</div>
+          <div>
+            <h3>Rastgele Öğrenci Seçici</h3>
+            <p>Tarafsız değerlendirme için öğrencileri rastgele sıraya koyun</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">✏️</div>
+          <div>
+            <h3>Toplu Not Girişi</h3>
+            <p>Birden fazla öğrencinin notunu hızlıca girin</p>
           </div>
         </div>
 
@@ -261,7 +493,7 @@
           <div class="feature-icon">📊</div>
           <div>
             <h3>Raporlama</h3>
-            <p>Excel, PDF, PNG veya ZIP formatında çıktı alın</p>
+            <p>Excel, PDF, PNG veya ZIP formatında sınıf ve grup bazlı çıktı alın</p>
           </div>
         </div>
 
@@ -269,15 +501,7 @@
           <div class="feature-icon">📈</div>
           <div>
             <h3>İstatistikler</h3>
-            <p>Puan dağılımı, dönem trendi ve ölçüt karşılaştırması</p>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">🎲</div>
-          <div>
-            <h3>Rastgele Seçici</h3>
-            <p>Tarafsız değerlendirme için rastgele öğrenci çekme</p>
+            <p>Puan dağılımı, dönem trendi ve ölçüt bazlı karşılaştırma grafikleri</p>
           </div>
         </div>
 
@@ -285,15 +509,15 @@
           <div class="feature-icon">🗂️</div>
           <div>
             <h3>Devamsızlık Takibi</h3>
-            <p>Sınava girmeyen ve sürekli devamsız öğrencileri belirleyin</p>
+            <p>Sınava girmeyen ve sürekli devamsız öğrencileri tespit edin; "G" olarak işaretleyin</p>
           </div>
         </div>
 
         <div class="feature-item">
-          <div class="feature-icon">💬</div>
+          <div class="feature-icon">💾</div>
           <div>
-            <h3>Sınav Konuları</h3>
-            <p>Konuları belirleyin, sınıf gruplarınızla paylaşın</p>
+            <h3>Taslak Kayıt</h3>
+            <p>Yarım kalan değerlendirmeler otomatik olarak taslak olarak kaydedilir</p>
           </div>
         </div>
 
@@ -301,11 +525,136 @@
           <div class="feature-icon">🔒</div>
           <div>
             <h3>Uygulama Kilidi</h3>
-            <p>Yüz Tanıma veya Parmak İzi ile güvenli erişim</p>
+            <p>Yüz Tanıma, Parmak İzi veya şifre ile erişim koruması</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🎨</div>
+          <div>
+            <h3>Görünüm Özelleştirme</h3>
+            <p>Açık/koyu mod ve 6 farklı tema rengi seçeneği</p>
           </div>
         </div>
 
       </div>
+    </div>
+
+    <!-- KONUŞMA SINAVI KONULARI -->
+    <div class="section-label">Konuşma Sınavı Konuları</div>
+    <div class="card">
+
+      <div class="list-item">
+        <div class="list-icon">📂</div>
+        <div>
+          <h3>4 Konu Kategorisi</h3>
+          <p>Hazırlıklı Konuşma, Sunuya Dayalı Konuşma, Performansa Dayalı Konuşma ve Özel Konu kategorilerinde hazır konu listeleri mevcuttur. Her ders için ayrı içerik sunulmaktadır.</p>
+        </div>
+      </div>
+
+      <div class="list-item">
+        <div class="list-icon">🔍</div>
+        <div>
+          <h3>Arama ve Filtreleme</h3>
+          <p>Türkçe karakter desteğiyle konular arasında tam metin arama yapabilirsiniz. Arama sırasında ilgili gruplar otomatik açılır.</p>
+        </div>
+      </div>
+
+      <div class="list-item">
+        <div class="list-icon">🎯</div>
+        <div>
+          <h3>Rastgele Konu Seçimi</h3>
+          <p>10, 20, 25, 30, 40, 50 veya 75 konu arasından rastgele seçim yapabilirsiniz. Tek tıkla tümünü seçme veya temizleme seçeneği de mevcuttur.</p>
+        </div>
+      </div>
+
+      <div class="list-item">
+        <div class="list-icon">📄</div>
+        <div>
+          <h3>PDF Dışa Aktarma</h3>
+          <p>Seçilen konuları; öğretmen adı, okul adı, eğitim-öğretim yılı, dönem, sınav numarası ve konuşma süresi bilgileriyle birlikte PDF olarak oluşturun ve paylaşın.</p>
+        </div>
+      </div>
+
+      <div class="list-item">
+        <div class="list-icon">📋</div>
+        <div>
+          <h3>Panoya Kopyalama</h3>
+          <p>Seçilen konuları numaralı liste olarak panoya kopyalayın. İstediğiniz platforma kolayca yapıştırabilirsiniz.</p>
+        </div>
+      </div>
+
+      <div class="list-item">
+        <div class="list-icon">⚙️</div>
+        <div>
+          <h3>Özel Ölçek Oluşturma</h3>
+          <p>30 ölçüt arasından tam 10 tanesini seçerek kendinize ait değerlendirme ölçeği oluşturun. Seçim sırası takip edilir ve numaralandırılır.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- AYARLAR -->
+    <div class="section-label">Ayarlar</div>
+    <div class="card">
+
+      <div class="settings-group">
+        <div class="settings-group-title">Öğretmen Bilgileri</div>
+        <ul>
+          <li>Öğretmen adı ve okul adı (PDF, Excel, PNG ve ZIP çıktılarında görünür)</li>
+        </ul>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">Süre Ayarları</div>
+        <ul>
+          <li>Süre uyarısı etkinleştirme</li>
+          <li>Minimum ve maksimum konuşma süresi (30–600 saniye arasında ayarlanabilir)</li>
+        </ul>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">Puanlama Deneyimi</div>
+        <ul>
+          <li>Titreşim (haptic) geri bildirimi</li>
+          <li>Ölçüt puanlandığında otomatik sonrakine geçiş</li>
+        </ul>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">Görünüm</div>
+        <ul>
+          <li>Açık mod, koyu mod veya sistem teması</li>
+          <li>6 farklı tema rengi (Mavi, Yeşil, Mor, Turuncu, Kırmızı, Siyah)</li>
+        </ul>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">Güvenlik</div>
+        <ul>
+          <li>Yüz Tanıma / Parmak İzi / Şifre ile uygulama kilidi</li>
+          <li>Uygulama açılışında kimlik doğrulama</li>
+        </ul>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">Veri Yönetimi</div>
+        <ul>
+          <li>AES-GCM 256-bit şifreli JSON formatında yedek alma</li>
+          <li>Yedekten geri yükleme (maksimum 20 MB)</li>
+          <li>Değerlendirme kayıtları, sınıf listeleri veya tüm veriler için ayrı silme seçenekleri</li>
+          <li>Silme işlemleri için 5 saniyelik geri alma (undo) özelliği</li>
+        </ul>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">Depolama</div>
+        <ul>
+          <li>Ses kayıtlarının sayısı ve toplam boyutu</li>
+          <li>Ses kayıtlarını toplu silme (değerlendirme verileri korunur)</li>
+        </ul>
+      </div>
+
     </div>
 
     <!-- SSS -->
@@ -324,22 +673,32 @@
 
       <div class="faq-item">
         <h3>Hangi dersler destekleniyor?</h3>
-        <p>Türkçe, Türk Dili ve Edebiyatı ile İngilizce dersleri desteklenmektedir.</p>
+        <p>Türkçe (5–8. sınıf), Türk Dili ve Edebiyatı (9–12. sınıf) ve İngilizce (5–12. sınıf, Seçmeli İngilizce dahil) desteklenmektedir.</p>
       </div>
 
       <div class="faq-item">
         <h3>Öğrenci listesini nasıl aktarabilirim?</h3>
-        <p>e-Okul'daki not girişi ekranından öğrenci listesini kopyalayıp uygulamaya yapıştırabilirsiniz.</p>
+        <p>e-Okul'daki not girişi ekranından öğrenci listesini kopyalayıp uygulamaya yapıştırabilirsiniz. Mükerrer kayıtlar otomatik olarak tespit edilir.</p>
       </div>
 
       <div class="faq-item">
         <h3>G statüsü ne anlama geliyor?</h3>
-        <p>Sınava girmeyen veya sürekli devamsız olan öğrenciler için kullanılır. Bu öğrencilerin puanı yerine "G" (Girmedi) ibaresi görüntülenir.</p>
+        <p>Sınava girmeyen veya sürekli devamsız öğrenciler için kullanılır. Bu öğrencilerin puanı yerine "G" (Girmedi) ibaresi görüntülenir ve raporlara yansır.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Seçmeli İngilizce için ayrı kayıt gerekiyor mu?</h3>
+        <p>Hayır. "İngilizce'yi Seçmeli İngilizce'ye Yansıt" seçeneğiyle aynı sınav puanı her iki derse otomatik olarak işlenir.</p>
       </div>
 
       <div class="faq-item">
         <h3>Verilerimi yedekleyebilir miyim?</h3>
-        <p>Evet. Ayarlar → Yedek Al bölümünden tüm verilerinizi AES-GCM ile şifrelenmiş JSON formatında yedekleyip geri yükleyebilirsiniz.</p>
+        <p>Evet. Ayarlar → Yedek Al bölümünden tüm verilerinizi AES-GCM 256-bit şifreli JSON formatında yedekleyip geri yükleyebilirsiniz.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Özel ölçek nasıl oluşturulur?</h3>
+        <p>Ölçek seçimi ekranında "Özel Ölçek" seçeneğini tıklayın. 30 ölçüt arasından tam 10 tanesini seçerek kendi değerlendirme ölçeğinizi oluşturabilirsiniz.</p>
       </div>
 
     </div>
@@ -374,9 +733,9 @@
         <p>
           Tüm öğrenci bilgileri, sınıf listeleri ve değerlendirme sonuçları
           <strong>yalnızca cihazınızda saklanır</strong>. Hiçbir veri sunucularımıza
-          gönderilmez. Yedekler <strong>AES-GCM 256-bit</strong> ile şifrelenmiş
-          JSON formatında üretilir ve yalnızca cihazınızdaki anahtar ile açılabilir.
-          Geri bildirim formu dışında üçüncü taraflarla veri paylaşımı yapılmaz.
+          gönderilmez. Yedekler <strong>AES-GCM 256-bit</strong> ile şifrelenmiş JSON
+          formatında üretilir; şifreleme anahtarı yalnızca cihazınızın Güvenli Anahtar Zinciri'nde
+          (Keychain) saklanır. Geri bildirim formu dışında üçüncü taraflarla veri paylaşımı yapılmaz.
         </p>
         <br />
         <p>Son güncelleme: Şubat 2026</p>
@@ -393,8 +752,7 @@
     function revealEmail(row) {
       const parts = ['dalgali', 'cemal', '@', 'gmail', '.', 'com'];
       const email = parts.join('');
-      const hint = document.getElementById('email-hint');
-      hint.textContent = email;
+      document.getElementById('email-hint').textContent = email;
       row.onclick = function() { window.location.href = 'mailto:' + email; };
     }
   </script>
